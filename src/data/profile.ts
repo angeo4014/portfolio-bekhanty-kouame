@@ -51,7 +51,6 @@ export const profile = {
   role: 'Développeur Full-Stack | Informaticien décisionnel',
   roles: [
     'Développeur Full-Stack',
-    'Informaticien décisionnel',
     'Concepteur d’applications',
   ],
   pitch:
@@ -114,7 +113,7 @@ export const skillCategories: SkillCategory[] = [
     title: 'Outils',
     icon: 'tools',
     summary: 'Versioning et environnement de travail',
-    items: ['Git', 'GitHub', 'Docker', 'Visual Studio Code', 'Microsoft Office'],
+    items: ['GitHub', 'Docker', 'Visual Studio Code'],
   },
 ];
 
@@ -150,7 +149,7 @@ export const projects: Project[] = [
       'Collecte centralisée des avis des usagers',
       'Analyse des retours pour le suivi de la qualité de service',
     ],
-    stack: ['Next.js', 'React', 'Supabase', 'PostgreSQL', 'Resend', 'Vercel'],
+    stack: ['Vercel', 'CSS', 'JavaScript', 'PHP', 'PHPMailer'],
     image: '/projects/drbf-subdirection.jpg',
     links: [
       { label: 'Voir le projet en ligne', href: 'https://evaluation-drbf.vercel.app/' },
@@ -209,7 +208,7 @@ export const experience = {
     'Mise en place de l’accès par QR Code pour simplifier le recueil des avis sur le terrain.',
     'Structuration, collecte et analyse des réponses afin d’alimenter le suivi de la qualité des services.',
   ],
-  stack: ['PHP', 'MySQL', 'HTML5', 'CSS3', 'JavaScript'],
+  stack: ['Vercel', 'CSS', 'JavaScript', 'PHP', 'PHPMailer'],
 };
 
 export const navLinks = [
