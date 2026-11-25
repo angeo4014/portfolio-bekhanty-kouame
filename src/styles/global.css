@@ -145,6 +145,53 @@ button {
   transform: translateY(0);
 }
 
+.cursor-followers {
+  position: fixed;
+  inset: 0;
+  z-index: 450;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.cursor-followers__item {
+  position: absolute;
+  left: -100px;
+  top: -100px;
+  display: block;
+  border-radius: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition:
+    left 0.3s cubic-bezier(0.2, 1.4, 0.4, 1),
+    top 0.3s cubic-bezier(0.2, 1.4, 0.4, 1),
+    opacity 0.2s ease;
+}
+
+.cursor-followers.is-active .cursor-followers__item {
+  opacity: 1;
+}
+
+.cursor-followers__item--dot {
+  width: 7px;
+  height: 7px;
+  background: var(--orange);
+  transition-duration: 0.08s, 0.08s, 0.2s;
+}
+
+.cursor-followers__item--ring {
+  width: 28px;
+  height: 28px;
+  border: 1px solid rgba(240, 120, 40, 0.65);
+  transition-duration: 0.28s, 0.28s, 0.2s;
+}
+
+.cursor-followers__item--halo {
+  width: 46px;
+  height: 46px;
+  border: 1px solid rgba(240, 120, 40, 0.28);
+  transition-duration: 0.46s, 0.46s, 0.2s;
+}
+
 /* ============================== BOUTONS ================================== */
 
 .btn {
@@ -2482,5 +2529,9 @@ button {
   .hero__content > * {
     opacity: 1;
     transform: none;
+  }
+
+  .cursor-followers {
+    display: none;
   }
 }

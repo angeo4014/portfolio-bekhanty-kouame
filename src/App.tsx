@@ -1,5 +1,6 @@
 import { About, Marquee } from './components/About';
 import { Contact } from './components/Contact';
+import { CursorFollowers } from './components/CursorFollowers';
 import { Footer } from './components/Footer';
 import { Hero } from './components/Hero';
 import { Experience, Journey } from './components/Journey';
@@ -12,6 +13,7 @@ export default function App() {
   return (
     <>
       <Loader />
+      <CursorFollowers />
       <a className="skip-link" href="#contenu">
         Aller au contenu principal
       </a>
