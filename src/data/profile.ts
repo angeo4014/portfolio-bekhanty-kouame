@@ -48,7 +48,7 @@ export const profile = {
   fullName: 'KOUAME Bekhanty Ange Stéphane Armel',
   displayName: 'Bekhanty',
   familyName: 'KOUAME',
-  role: 'Développeur Full-Stack | Informaticien décisionnel',
+  role: 'Développeur Full-Stack',
   roles: [
     'Développeur Full-Stack',
     'Concepteur d’applications',

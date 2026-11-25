@@ -36,7 +36,7 @@ export function Footer() {
 
         <div className="footer__bottom">
           <p>
-            © {year} {profile.familyName} {profile.displayName} — Tous droits réservés.
+            © {year} {profile.familyName} {profile.displayName}
           </p>
           <nav aria-label="Navigation de pied de page">
             {navLinks.slice(1).map((link) => (
