@@ -221,20 +221,11 @@ export const navLinks = [
 ];
 
 export const marqueeItems = [
-  'HTML5',
-  'CSS3',
-  'JavaScript',
-  'React',
-  'PHP',
-  'Java',
-  'Spring Boot',
-  'MySQL',
-  'SQL',
-  'Supabase',
   'PostgreSQL',
   'UML',
   'Merise',
   'Git',
   'Docker',
   'Figma',
+  'HTML5',
 ];

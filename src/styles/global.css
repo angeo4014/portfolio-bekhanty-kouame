@@ -1012,46 +1012,75 @@ button {
   overflow: hidden;
   mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  animation: marqueeReveal 700ms var(--ease) both;
 }
 
 .marquee__track {
   display: flex;
   width: max-content;
-  animation: marquee 38s linear infinite;
-}
-
-.marquee:hover .marquee__track {
-  animation-play-state: paused;
+  will-change: transform;
 }
 
 .marquee__group {
   display: flex;
   align-items: center;
-  flex-shrink: 0;
+  flex: 0 0 auto;
 }
 
-.marquee__group span {
+.marquee__item {
   display: inline-flex;
   align-items: center;
   gap: 30px;
   padding-right: 30px;
+  border: 0;
+  background: transparent;
   font-family: var(--font-display);
   font-size: 15px;
   font-weight: 600;
   letter-spacing: -0.01em;
   color: var(--ink-soft);
   white-space: nowrap;
+  cursor: pointer;
+  transition:
+    color 240ms var(--ease),
+    transform 240ms var(--ease),
+    text-shadow 240ms var(--ease);
 }
 
-.marquee__group i {
+.marquee__item i {
   font-style: normal;
   font-size: 10px;
   color: var(--orange);
+  transition: transform 240ms var(--ease), text-shadow 240ms var(--ease);
 }
 
-@keyframes marquee {
+.marquee__item:hover,
+.marquee__item.is-selected {
+  color: var(--orange-deep);
+  transform: scale(1.06) rotate(-1deg);
+  text-shadow: 0 0 18px rgba(240, 120, 40, 0.3);
+}
+
+.marquee__item:hover i,
+.marquee__item.is-selected i {
+  transform: scale(1.25) rotate(18deg);
+  text-shadow: 0 0 12px rgba(240, 120, 40, 0.75);
+}
+
+.marquee__item:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+@keyframes marqueeReveal {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
   to {
-    transform: translateX(-50%);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -2447,6 +2476,7 @@ button {
   .marquee__track {
     animation: none;
     transform: none;
+    will-change: auto;
   }
 
   .hero__content > * {
