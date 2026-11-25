@@ -924,8 +924,8 @@ button {
   color: var(--orange);
 }
 
-.portrait__tag--top {
-  top: 13%;
+.portrait__tag--role {
+  bottom: 24%;
   right: -6%;
 }
 
@@ -2234,8 +2234,8 @@ button {
     width: min(330px, 78%);
   }
 
-  .portrait__tag--top {
-    right: -2%;
+  .portrait__tag--role {
+    right: -4%;
   }
 
   .portrait__tag--bottom {
@@ -2343,8 +2343,8 @@ button {
     padding: 9px 13px;
   }
 
-  .portrait__tag--top {
-    top: 8%;
+  .portrait__tag--role {
+    bottom: 24%;
     right: -3%;
   }
 

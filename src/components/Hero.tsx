@@ -95,9 +95,9 @@ export function Hero() {
               <span className="portrait__glow" aria-hidden="true" />
             </div>
 
-            <div className="portrait__tag portrait__tag--top">
+            <div className="portrait__tag portrait__tag--role">
               <Sparkle size={16} />
-              <span>Full-Stack &amp; Data</span>
+              <span>Full-Stack</span>
             </div>
             <div className="portrait__tag portrait__tag--bottom">
               <span className="portrait__tag-label">Diplômé</span>
