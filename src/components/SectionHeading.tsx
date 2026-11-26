@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import { Reveal } from './Reveal';
+import { ScrollLineTitle } from './ScrollLineTitle';
 
 type Props = {
   eyebrow: string;
@@ -17,7 +18,7 @@ export function SectionHeading({ eyebrow, title, description }: Props) {
         </p>
       </Reveal>
       <Reveal delay={80}>
-        <h2 className="section-heading__title">{title}</h2>
+        <ScrollLineTitle title={title} />
       </Reveal>
       {description ? (
         <Reveal delay={150}>

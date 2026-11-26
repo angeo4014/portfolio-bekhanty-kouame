@@ -32,7 +32,7 @@ export function Loader() {
     >
       <div className="loader__inner">
         <span className="loader__monogram" aria-hidden="true">
-          K<span>B</span>
+          B<span>K</span>
         </span>
         <div className="loader__bar" aria-hidden="true">
           <span />

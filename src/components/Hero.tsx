@@ -1,4 +1,5 @@
 import { useRef, type PointerEvent } from 'react';
+import { motion, useSpring } from 'motion/react';
 import { profile } from '../data/profile';
 import { useTypewriter } from '../hooks/useTypewriter';
 import { ArrowRight, Download, Image as ImageIcon, MapPin, Sparkle } from './Icons';
@@ -6,6 +7,8 @@ import { ArrowRight, Download, Image as ImageIcon, MapPin, Sparkle } from './Ico
 export function Hero() {
   const typed = useTypewriter(profile.roles);
   const heroRef = useRef<HTMLElement | null>(null);
+  const rotateX = useSpring(0, { stiffness: 180, damping: 20, mass: 0.6 });
+  const rotateY = useSpring(0, { stiffness: 180, damping: 20, mass: 0.6 });
 
   const handlePointer = (event: PointerEvent<HTMLElement>) => {
     const hero = heroRef.current;
@@ -16,6 +19,26 @@ export function Hero() {
     const y = (event.clientY - rect.top) / rect.height - 0.5;
     hero.style.setProperty('--mx', `${x.toFixed(3)}`);
     hero.style.setProperty('--my', `${y.toFixed(3)}`);
+  };
+
+  const handlePortraitPointer = (event: PointerEvent<HTMLDivElement>) => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      rotateX.set(0);
+      rotateY.set(0);
+      return;
+    }
+
+    const rect = event.currentTarget.getBoundingClientRect();
+    const x = (event.clientX - rect.left) / rect.width - 0.5;
+    const y = (event.clientY - rect.top) / rect.height - 0.5;
+    const intensity = event.pointerType === 'touch' ? 8 : 20;
+    rotateX.set(-y * intensity);
+    rotateY.set(x * intensity);
+  };
+
+  const resetPortraitTilt = () => {
+    rotateX.set(0);
+    rotateY.set(0);
   };
 
   return (
@@ -35,8 +58,8 @@ export function Hero() {
           </p>
 
           <h1 className="hero__title">
-            <span className="hero__title-line hero__title-line--name">{profile.displayName}</span>
-            <span className="hero__title-line hero__title-line--accent">{profile.familyName}</span>
+            <span className="hero__title-line hero__title-line--name">BEKHANTY</span>
+            <span className="hero__title-line hero__title-line--accent">KOUAME</span>
           </h1>
 
           <p className="hero__typed" aria-label={profile.role}>
@@ -71,7 +94,15 @@ export function Hero() {
 
         <div className="hero__visual">
           <span className="hero__visual-ring" aria-hidden="true" />
-          <div className="portrait">
+          <motion.div
+            className="portrait"
+            style={{ rotateX, rotateY, transformPerspective: 1000 }}
+            onPointerDown={handlePortraitPointer}
+            onPointerMove={handlePortraitPointer}
+            onPointerUp={resetPortraitTilt}
+            onPointerCancel={resetPortraitTilt}
+            onPointerLeave={resetPortraitTilt}
+          >
             <div className="portrait__media">
               {profile.photo ? (
                 <img
@@ -103,7 +134,7 @@ export function Hero() {
               <span className="portrait__tag-label">Diplômé</span>
               <strong>HETEC</strong>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
 
