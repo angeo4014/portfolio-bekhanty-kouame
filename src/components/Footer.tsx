@@ -10,7 +10,7 @@ export function Footer() {
         <div className="footer__top">
           <div className="footer__brand">
             <span className="brand__mark" aria-hidden="true">
-              KB
+              BK
             </span>
             <div>
               <p className="footer__name">{profile.fullName}</p>
@@ -36,7 +36,7 @@ export function Footer() {
 
         <div className="footer__bottom">
           <p>
-            © {year} {profile.familyName} {profile.displayName}
+            © {year} {profile.displayName} {profile.familyName}
           </p>
           <nav aria-label="Navigation de pied de page">
             {navLinks.slice(1).map((link) => (

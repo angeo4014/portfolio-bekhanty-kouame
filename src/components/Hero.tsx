@@ -35,8 +35,8 @@ export function Hero() {
           </p>
 
           <h1 className="hero__title">
-            <span className="hero__title-line hero__title-line--name">{profile.familyName}</span>
-            <span className="hero__title-line hero__title-line--accent">{profile.displayName}</span>
+            <span className="hero__title-line hero__title-line--name">{profile.displayName}</span>
+            <span className="hero__title-line hero__title-line--accent">{profile.familyName}</span>
           </h1>
 
           <p className="hero__typed" aria-label={profile.role}>
@@ -83,7 +83,7 @@ export function Hero() {
               ) : (
                 <div className="portrait__placeholder">
                   <span className="portrait__initials" aria-hidden="true">
-                    KB
+                    BK
                   </span>
                   <span className="portrait__hint">
                     <ImageIcon size={18} />

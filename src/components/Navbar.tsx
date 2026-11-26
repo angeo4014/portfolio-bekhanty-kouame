@@ -28,11 +28,11 @@ export function Navbar() {
         <div className="nav__inner">
           <a className="brand" href="#accueil" aria-label="Retour en haut de page">
             <span className="brand__mark" aria-hidden="true">
-              KB
+              BK
             </span>
             <span className="brand__name">
-              {profile.familyName}
-              <small>{profile.displayName}</small>
+              {profile.displayName}
+              <small>{profile.familyName}</small>
             </span>
           </a>
 

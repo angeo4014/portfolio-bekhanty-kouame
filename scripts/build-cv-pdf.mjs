@@ -19,7 +19,7 @@ const line = rgb(0.898, 0.886, 0.867);
 const paper = rgb(1, 1, 1);
 
 const data = {
-  name: 'KOUAME Bekhanty Ange Stéphane Armel',
+  name: 'Bekhanty Kouame Ange Stéphane Armel',
   title: 'Développeur Full-Stack  |  Informaticien décisionnel',
   contact: "+225 01 40 14 71 44   ·   bekhantykouame@gmail.com   ·   Bouaké, Côte d'Ivoire",
   profile:
@@ -119,9 +119,9 @@ const sectionTitle = (label) => {
 
 page.drawRectangle({ x: 0, y: A4.height - 8, width: A4.width, height: 8, color: orange });
 
-page.drawText('KOUAME', { x: margin, y: A4.height - margin - 22, size: 27, font: bold, color: ink });
-page.drawText('Bekhanty', {
-  x: margin + bold.widthOfTextAtSize('KOUAME ', 27),
+page.drawText('BEKHANTY', { x: margin, y: A4.height - margin - 22, size: 27, font: bold, color: ink });
+page.drawText('KOUAME', {
+  x: margin + bold.widthOfTextAtSize('BEKHANTY ', 27),
   y: A4.height - margin - 22,
   size: 27,
   font: bold,
@@ -213,7 +213,7 @@ page.drawLine({
   thickness: 0.7,
   color: line,
 });
-page.drawText('Portfolio - KOUAME Bekhanty, développeur Full-Stack & informaticien décisionnel', {
+page.drawText('Portfolio - Bekhanty Kouame, développeur Full-Stack & informaticien décisionnel', {
   x: margin,
   y: 32,
   size: 7.8,

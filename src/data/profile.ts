@@ -45,9 +45,9 @@ export interface TimelineItem {
 }
 
 export const profile = {
-  fullName: 'KOUAME Bekhanty Ange Stéphane Armel',
+  fullName: 'Bekhanty Kouame Ange Stéphane Armel',
   displayName: 'Bekhanty',
-  familyName: 'KOUAME',
+  familyName: 'Kouame',
   role: 'Développeur Full-Stack',
   roles: [
     'Développeur Full-Stack',
